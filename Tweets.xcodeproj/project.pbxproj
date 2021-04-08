@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4973AAE3261F51D80074C9CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AAE2261F51D80074C9CD /* User.swift */; };
+		4973AAE6261F51E50074C9CD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AAE5261F51E50074C9CD /* Post.swift */; };
+		4973AAE9261F51F90074C9CD /* PostLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AAE8261F51F90074C9CD /* PostLocation.swift */; };
+		4973AAEE261F52130074C9CD /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AAED261F52130074C9CD /* RegisterRequest.swift */; };
+		4973AAF1261F521D0074C9CD /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AAF0261F521D0074C9CD /* PostRequest.swift */; };
+		4973AAF4261F52290074C9CD /* PostLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AAF3261F52290074C9CD /* PostLocationRequest.swift */; };
+		4973AAF7261F52340074C9CD /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AAF6261F52340074C9CD /* LoginRequest.swift */; };
+		4973AAFA261F52400074C9CD /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AAF9261F52400074C9CD /* LoginResponse.swift */; };
+		4973AAFD261F52470074C9CD /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AAFC261F52470074C9CD /* ErrorResponse.swift */; };
+		4973AB00261F52510074C9CD /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AAFF261F52510074C9CD /* GeneralResponse.swift */; };
+		4973AB07261F54380074C9CD /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AB06261F54380074C9CD /* EndPoints.swift */; };
 		49DBE06B261E02E7001210DC /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DBE06A261E02E7001210DC /* Welcome.storyboard */; };
 		49DBE06F261E09F3001210DC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBE06E261E09F3001210DC /* WelcomeViewController.swift */; };
 		49DBE072261E0A01001210DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBE071261E0A01001210DC /* LoginViewController.swift */; };
@@ -22,6 +33,17 @@
 /* Begin PBXFileReference section */
 		11219A1E657F0A55B8FA9C87 /* Pods-Tweets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweets.debug.xcconfig"; path = "Target Support Files/Pods-Tweets/Pods-Tweets.debug.xcconfig"; sourceTree = "<group>"; };
 		32ABF3B939FFC8812BACD78D /* Pods-Tweets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweets.release.xcconfig"; path = "Target Support Files/Pods-Tweets/Pods-Tweets.release.xcconfig"; sourceTree = "<group>"; };
+		4973AAE2261F51D80074C9CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4973AAE5261F51E50074C9CD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		4973AAE8261F51F90074C9CD /* PostLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLocation.swift; sourceTree = "<group>"; };
+		4973AAED261F52130074C9CD /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		4973AAF0261F521D0074C9CD /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
+		4973AAF3261F52290074C9CD /* PostLocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLocationRequest.swift; sourceTree = "<group>"; };
+		4973AAF6261F52340074C9CD /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		4973AAF9261F52400074C9CD /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		4973AAFC261F52470074C9CD /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		4973AAFF261F52510074C9CD /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
+		4973AB06261F54380074C9CD /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		49DBE06A261E02E7001210DC /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		49DBE06E261E09F3001210DC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		49DBE071261E0A01001210DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -56,13 +78,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4973AAE1261F51940074C9CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4973AAEC261F52030074C9CD /* Requests */,
+				4973AAEB261F51FD0074C9CD /* Responses */,
+				4973AAE2261F51D80074C9CD /* User.swift */,
+				4973AAE5261F51E50074C9CD /* Post.swift */,
+				4973AAE8261F51F90074C9CD /* PostLocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4973AAEB261F51FD0074C9CD /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				4973AAF9261F52400074C9CD /* LoginResponse.swift */,
+				4973AAFC261F52470074C9CD /* ErrorResponse.swift */,
+				4973AAFF261F52510074C9CD /* GeneralResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		4973AAEC261F52030074C9CD /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				4973AAED261F52130074C9CD /* RegisterRequest.swift */,
+				4973AAF0261F521D0074C9CD /* PostRequest.swift */,
+				4973AAF3261F52290074C9CD /* PostLocationRequest.swift */,
+				4973AAF6261F52340074C9CD /* LoginRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		49DBE066261E02A6001210DC /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				4973AAE1261F51940074C9CD /* Models */,
 				49FF15A6261DFF6800AB1B9C /* AppDelegate.swift */,
 				49FF15AA261DFF6800AB1B9C /* ViewController.swift */,
 				49FF15AF261DFF6900AB1B9C /* Assets.xcassets */,
 				49FF15B1261DFF6900AB1B9C /* LaunchScreen.storyboard */,
+				4973AB06261F54380074C9CD /* EndPoints.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -249,9 +306,20 @@
 			files = (
 				49DBE072261E0A01001210DC /* LoginViewController.swift in Sources */,
 				49DBE075261E0A14001210DC /* RegisterViewController.swift in Sources */,
+				4973AAF4261F52290074C9CD /* PostLocationRequest.swift in Sources */,
+				4973AAF7261F52340074C9CD /* LoginRequest.swift in Sources */,
+				4973AB00261F52510074C9CD /* GeneralResponse.swift in Sources */,
+				4973AAEE261F52130074C9CD /* RegisterRequest.swift in Sources */,
+				4973AAE3261F51D80074C9CD /* User.swift in Sources */,
+				4973AAFA261F52400074C9CD /* LoginResponse.swift in Sources */,
 				49DBE06F261E09F3001210DC /* WelcomeViewController.swift in Sources */,
+				4973AAE9261F51F90074C9CD /* PostLocation.swift in Sources */,
 				49FF15AB261DFF6800AB1B9C /* ViewController.swift in Sources */,
+				4973AAF1261F521D0074C9CD /* PostRequest.swift in Sources */,
+				4973AAE6261F51E50074C9CD /* Post.swift in Sources */,
 				49FF15A7261DFF6800AB1B9C /* AppDelegate.swift in Sources */,
+				4973AB07261F54380074C9CD /* EndPoints.swift in Sources */,
+				4973AAFD261F52470074C9CD /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
