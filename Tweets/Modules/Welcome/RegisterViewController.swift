@@ -62,8 +62,11 @@ class RegisterViewController: UIViewController {
             SVProgressHUD.dismiss()
             
             switch response {
-            case .success(let response):
+            case .success(let user):
                 self.performSegue(withIdentifier: "showHome", sender: nil)
+                
+                // Saving credentials
+                SimpleNetworking.setAuthenticationHeader(prefix: "", token: user.token)
             case .error(let error):
                 NotificationBanner(title: "Error", subtitle: error.localizedDescription, style: .danger).show()
             case .errorResult(let entity):
