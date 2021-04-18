@@ -33,6 +33,8 @@ class HomeViewController: UIViewController {
     private func setupUI() {
         // 1. Asign data source
         // 2. Register cell
+        
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
     }
@@ -55,6 +57,56 @@ class HomeViewController: UIViewController {
                     NotificationBanner(title: "Error", subtitle: entity.error, style: .warning).show()
             }
         }
+    }
+    
+    private func deletePostAt(indexPath: IndexPath) {
+        // 1. Show loader
+        SVProgressHUD.show()
+        
+        // 2. Get post ID to delete
+        let postId = dataSource[indexPath.row].id
+        
+        // 3. Preparing delete endpoint
+        let endpoint = Endpoints.delete + postId
+        
+        // 4. Call service to delete post
+        SN.delete(endpoint: endpoint) { (response: SNResultWithEntity<GeneralResponse, ErrorResponse>) in
+            
+            // Close loader
+            SVProgressHUD.dismiss()
+            
+            switch response {
+            case .success:
+                // 1. Delete post from datasource
+                self.dataSource.remove(at: indexPath.row)
+                
+                // 2. Delete table cell
+                self.tableView.deleteRows(at: [indexPath], with: .left)
+                
+            case .error(let error):
+                NotificationBanner(title: "Error", subtitle: error.localizedDescription, style: .danger).show()
+            case .errorResult(let entity):
+                NotificationBanner(title: "Error", subtitle: entity.error, style: .warning).show()
+            }
+            
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (_, _) in
+            // Now we delete the tweet
+            self.deletePostAt(indexPath: indexPath)
+        }
+        
+        return [deleteAction]
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Save user email and validate
+        return dataSource[indexPath.row].author.email != "test1@test.com"
     }
 }
 
