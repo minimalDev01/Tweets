@@ -43,7 +43,7 @@
                     <navigationItem key="navigationItem" title="Tweets" id="6z3-sg-L2j">
                         <barButtonItem key="rightBarButtonItem" title="Show map" id="GGi-3S-cHB">
                             <connections>
-                                <segue destination="HnQ-Oq-NBP" kind="show" id="Ywt-Tn-vV1"/>
+                                <segue destination="HnQ-Oq-NBP" kind="show" identifier="showMap" id="Ywt-Tn-vV1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
