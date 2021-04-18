@@ -126,6 +126,8 @@ class AddPostViewController: UIViewController {
         
     }
     
+    // TASK: Turn this two funcs into one using parameters!
+    
     private func uploadVideoToFirebase() {
         // 1. Check if video exists and convert into Data
         guard let currentVideoSavedURL = currentVideoURL,
