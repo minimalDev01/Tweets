@@ -236,9 +236,9 @@ class AddPostViewController: UIViewController {
     
     private func openCamera() {
         imagePicker = UIImagePickerController()
-        imagePicker?.sourceType = .photoLibrary
-        //imagePicker?.cameraFlashMode = .off 
-        //imagePicker?.cameraCaptureMode = .photo
+        imagePicker?.sourceType = .camera
+        imagePicker?.cameraFlashMode = .off
+        imagePicker?.cameraCaptureMode = .photo
         imagePicker?.allowsEditing = true
         imagePicker?.delegate = self
         
@@ -252,10 +252,10 @@ class AddPostViewController: UIViewController {
     
     private func openVideoCamera() {
         imagePicker = UIImagePickerController()
-        imagePicker?.sourceType = .photoLibrary
+        imagePicker?.sourceType = .camera
         imagePicker?.mediaTypes = [kUTTypeMovie as String]
-        //imagePicker?.cameraFlashMode = .off
-        //imagePicker?.cameraCaptureMode = .video
+        imagePicker?.cameraFlashMode = .off
+        imagePicker?.cameraCaptureMode = .video
         imagePicker?.videoQuality = .typeMedium
         imagePicker?.videoMaximumDuration = TimeInterval(5)
         imagePicker?.allowsEditing = true
