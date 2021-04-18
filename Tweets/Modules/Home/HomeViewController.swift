@@ -33,7 +33,6 @@ class HomeViewController: UIViewController {
     private func setupUI() {
         // 1. Asign data source
         // 2. Register cell
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
@@ -71,7 +70,6 @@ class HomeViewController: UIViewController {
         
         // 4. Call service to delete post
         SN.delete(endpoint: endpoint) { (response: SNResultWithEntity<GeneralResponse, ErrorResponse>) in
-            
             // Close loader
             SVProgressHUD.dismiss()
             
@@ -105,8 +103,11 @@ extension HomeViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Save user email and validate
-        return dataSource[indexPath.row].author.email != "test1@test.com"
+        // Get email saved in UserDefaults
+        let storedEmail = UserDefaults.standard.string(forKey: "email-saved")
+        
+        // Only allow to delete own posts
+        return dataSource[indexPath.row].author.email == storedEmail
     }
 }
 

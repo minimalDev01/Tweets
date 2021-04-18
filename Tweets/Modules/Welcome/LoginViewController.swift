@@ -59,6 +59,9 @@ class LoginViewController: UIViewController {
             case .success(let user):
                 self.performSegue(withIdentifier: "showHome", sender: nil)
                 
+                // Saving email into UserDefaults in order to use it when trying to delete our own posts
+                UserDefaults.standard.set(user.user.email, forKey: "email-saved")
+                
                 // Saving credentials
                 SimpleNetworking.setAuthenticationHeader(prefix: "", token: user.token)
             case .error(let error):
