@@ -13,6 +13,7 @@ import FirebaseStorage
 import AVFoundation
 import AVKit
 import MobileCoreServices
+import CoreLocation
 
 class AddPostViewController: UIViewController {
     // MARK: -IBOutlet
@@ -24,6 +25,7 @@ class AddPostViewController: UIViewController {
     // MARK: -IBActions
     @IBAction func addPostAction() {
         uploadVideoToFirebase()
+        //uploadPhotoToFirebase()
     }
     
     @IBAction func dismissAction() {
@@ -64,11 +66,14 @@ class AddPostViewController: UIViewController {
     // MARK: - Properties
     private var imagePicker: UIImagePickerController?
     private var currentVideoURL: URL?
+    private var locationManager: CLLocationManager?
+    private var userLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        requestLocation()
     }
         
     // MARK: -Private Methods
@@ -176,6 +181,19 @@ class AddPostViewController: UIViewController {
         
     }
     
+    private func requestLocation() {
+        // Check if user have location enabled
+        guard CLLocationManager.locationServicesEnabled() else {
+            return
+        }
+        
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.startUpdatingLocation()
+    }
+    
     private func savePost(imageUrl: String?, videoUrl: String?) {
         // 1. Create request
         let request = PostRequest(text: postTextView.text, imageUrl: imageUrl, videUrl: videoUrl, location: nil)
@@ -255,5 +273,18 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
             videoButton.isHidden = false
             currentVideoURL = recordedVideoUrl
         }
+    }
+}
+
+// MARK: -CLLocationManagerDelegate
+extension AddPostViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // Getting last user location
+        guard let bestLocation = locations.last else {
+            return
+        }
+        
+        // Now we have user location
+        userLocation = bestLocation
     }
 }
