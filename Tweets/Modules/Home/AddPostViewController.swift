@@ -24,8 +24,17 @@ class AddPostViewController: UIViewController {
     
     // MARK: -IBActions
     @IBAction func addPostAction() {
-        uploadVideoToFirebase()
-        //uploadPhotoToFirebase()
+        if currentVideoURL != nil {
+            uploadVideoToFirebase()
+            return
+        }
+        
+        if previewImageView.image != nil {
+            uploadPhotoToFirebase()
+            return
+        }
+        
+        savePost(imageUrl: nil, videoUrl: nil)
     }
     
     @IBAction func dismissAction() {
@@ -195,8 +204,15 @@ class AddPostViewController: UIViewController {
     }
     
     private func savePost(imageUrl: String?, videoUrl: String?) {
+        // Create location request
+        var postLocation: PostRequestLocation?
+        
+        if let userLocation = userLocation {
+            postLocation = PostRequestLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        }
+                
         // 1. Create request
-        let request = PostRequest(text: postTextView.text, imageUrl: imageUrl, videUrl: videoUrl, location: nil)
+        let request = PostRequest(text: postTextView.text, imageUrl: imageUrl, videUrl: videoUrl, location: postLocation)
         
         // 2. Loader
         SVProgressHUD.show()

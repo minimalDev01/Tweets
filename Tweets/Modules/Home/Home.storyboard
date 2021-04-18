@@ -40,7 +40,13 @@
                             <constraint firstItem="lab-pD-Vph" firstAttribute="trailing" secondItem="Cmc-9X-pIu" secondAttribute="trailing" constant="30" id="qh5-Pz-cdZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tweets" id="6z3-sg-L2j"/>
+                    <navigationItem key="navigationItem" title="Tweets" id="6z3-sg-L2j">
+                        <barButtonItem key="rightBarButtonItem" title="Show map" id="GGi-3S-cHB">
+                            <connections>
+                                <segue destination="HnQ-Oq-NBP" kind="show" id="Ywt-Tn-vV1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="7MR-Er-ugo" id="D6T-D0-xK1"/>
                     </connections>
@@ -48,6 +54,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqM-Jo-enP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1021.7391304347827" y="81.696428571428569"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="J5h-DQ-y4B">
+            <objects>
+                <viewController id="HnQ-Oq-NBP" customClass="MapViewController" customModule="Tweets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="35D-c7-BfK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCV-7b-2ec">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qGh-wL-r5Y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bCV-7b-2ec" firstAttribute="leading" secondItem="qGh-wL-r5Y" secondAttribute="leading" id="J10-0U-zvI"/>
+                            <constraint firstAttribute="bottom" secondItem="bCV-7b-2ec" secondAttribute="bottom" id="Mcl-tx-Aw8"/>
+                            <constraint firstItem="bCV-7b-2ec" firstAttribute="top" secondItem="qGh-wL-r5Y" secondAttribute="top" id="iHq-1o-LPd"/>
+                            <constraint firstItem="bCV-7b-2ec" firstAttribute="trailing" secondItem="qGh-wL-r5Y" secondAttribute="trailing" id="vuS-kM-5N3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="bnb-vr-g7v"/>
+                    <connections>
+                        <outlet property="mapContainer" destination="bCV-7b-2ec" id="dN7-h3-kEJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cTP-bf-QIu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952.1739130434785" y="-255.13392857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4ds-bi-OHn">

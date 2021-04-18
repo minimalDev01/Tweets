@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		494226F3262C9FD500B52444 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494226F2262C9FD500B52444 /* MapViewController.swift */; };
 		494969CA262C44AD002E6F42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 494969C9262C44AD002E6F42 /* GoogleService-Info.plist */; };
 		4973AAE3261F51D80074C9CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AAE2261F51D80074C9CD /* User.swift */; };
 		4973AAE6261F51E50074C9CD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973AAE5261F51E50074C9CD /* Post.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		11219A1E657F0A55B8FA9C87 /* Pods-Tweets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweets.debug.xcconfig"; path = "Target Support Files/Pods-Tweets/Pods-Tweets.debug.xcconfig"; sourceTree = "<group>"; };
 		32ABF3B939FFC8812BACD78D /* Pods-Tweets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweets.release.xcconfig"; path = "Target Support Files/Pods-Tweets/Pods-Tweets.release.xcconfig"; sourceTree = "<group>"; };
+		494226F2262C9FD500B52444 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		494969C9262C44AD002E6F42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4973AAE2261F51D80074C9CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4973AAE5261F51E50074C9CD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				49DBE078261E1039001210DC /* Home.storyboard */,
 				4973AB09261F5F040074C9CD /* HomeViewController.swift */,
 				4973AB12261F8F660074C9CD /* AddPostViewController.swift */,
+				494226F2262C9FD500B52444 /* MapViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				49DBE072261E0A01001210DC /* LoginViewController.swift in Sources */,
 				49DBE075261E0A14001210DC /* RegisterViewController.swift in Sources */,
 				4973AAF4261F52290074C9CD /* PostLocationRequest.swift in Sources */,
+				494226F3262C9FD500B52444 /* MapViewController.swift in Sources */,
 				4973AB13261F8F670074C9CD /* AddPostViewController.swift in Sources */,
 				4973AB0A261F5F040074C9CD /* HomeViewController.swift in Sources */,
 				4973AAF7261F52340074C9CD /* LoginRequest.swift in Sources */,
