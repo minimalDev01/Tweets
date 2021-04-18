@@ -70,9 +70,9 @@ class AddPostViewController: UIViewController {
     
     private func openCamera() {
         imagePicker = UIImagePickerController()
-        imagePicker?.sourceType = .camera
-        imagePicker?.cameraFlashMode = .off
-        imagePicker?.cameraCaptureMode = .photo
+        imagePicker?.sourceType = .photoLibrary
+        //imagePicker?.cameraFlashMode = .off 
+        //imagePicker?.cameraCaptureMode = .photo
         imagePicker?.allowsEditing = true
         imagePicker?.delegate = self
         
