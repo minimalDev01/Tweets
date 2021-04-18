@@ -50,5 +50,9 @@
     <string>We are going to use your location in order to post your Tweet :)</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>We are going to use your location in order to post your Tweet :)</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>We are going to use your location in order to post your Tweet :)</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We are going to use your photo library in order to post your Tweet :)</string>
 </dict>
 </plist>
