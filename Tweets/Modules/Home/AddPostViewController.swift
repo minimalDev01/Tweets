@@ -9,6 +9,7 @@ import UIKit
 import Simple_Networking
 import SVProgressHUD
 import NotificationBannerSwift
+import FirebaseStorage
 
 class AddPostViewController: UIViewController {
     // MARK: -IBOutlet
@@ -44,7 +45,58 @@ class AddPostViewController: UIViewController {
         postTextView.layer.cornerRadius = 10
     }
     
+    private func uploadPhotoToFirebase() {
+        // 1. Check if photo exists, compress image and convert into Data
+        guard let imageSaved = previewImageView.image,
+              let imageSavedData: Data = imageSaved.jpegData(compressionQuality: 0.1) else {
+            return
+        }
+        
+        // 2. Show loader
+        SVProgressHUD.show()
+        
+        // 3. Config to save photo in firebase
+        let metaDataConfig = StorageMetadata()
+        metaDataConfig.contentType = "image/jpg"
+        
+        // 4. Create ref to firebase storage
+        let storage = Storage.storage()
+        
+        // 5. Create image name to upload
+        let imageName = Int.random(in: 100...1000)
+        
+        // 6. Create ref to the folder where the photo will be saved
+        let folderReference = storage.reference(withPath: "tweets-photos/\(imageName).jpg")
+        
+        // 7. Upload photo to firebase (on secondary thread because of heavyness
+        DispatchQueue.global(qos: .background).async {
+            folderReference.putData(imageSavedData, metadata: metaDataConfig) { (metaData: StorageMetadata?, error: Error?) in
+                // Return to principal thread
+                DispatchQueue.main.async {
+                    // Dismiss loader
+                    SVProgressHUD.dismiss()
+                    
+                    // Check errors
+                    if let error = error {
+                        NotificationBanner(title: "Error", subtitle: error.localizedDescription, style: .warning).show()
+                        return
+                    }
+                    
+                    // If no error, get download URL
+                    folderReference.downloadURL { (url: URL?, error: Error?) in
+                        print(url?.absoluteString ?? "")
+                    }
+                }
+            }
+        }
+        
+    }
+    
     private func savePost() {
+        // First of all, upload photo to firebase
+        uploadPhotoToFirebase()
+        return
+        
         // 1. Create request
         let request = PostRequest(text: postTextView.text, imageUrl: nil, videUrl: nil, location: nil)
         
