@@ -21,9 +21,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmc-9X-pIu">
-                                <rect key="frame" x="338" y="812" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmc-9X-pIu">
+                                <rect key="frame" x="334" y="792" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.46227788889999999" green="0.82660491449999995" blue="0.42849939479999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="b9b-0y-O3N"/>
+                                    <constraint firstAttribute="height" constant="50" id="edf-mP-hIk"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="plus" catalog="system"/>
                                 <connections>
                                     <segue destination="N7L-mL-1Dk" kind="presentation" modalPresentationStyle="fullScreen" id="d0g-cw-bkc"/>
                                 </connections>
@@ -48,6 +54,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addPostButton" destination="Cmc-9X-pIu" id="mxE-tX-Kdy"/>
                         <outlet property="tableView" destination="7MR-Er-ugo" id="D6T-D0-xK1"/>
                     </connections>
                 </viewController>
@@ -216,6 +223,7 @@
     </scenes>
     <resources>
         <image name="bottomImage" width="351.5" height="123"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="video.fill" catalog="system" width="128" height="82"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

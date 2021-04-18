@@ -14,6 +14,7 @@ import AVKit
 class HomeViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addPostButton: UIButton!
     
     // MARK: - Properties
     private let cellId = "TweetTableViewCell"
@@ -37,6 +38,8 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
+        
+        addPostButton.layer.cornerRadius = 25
     }
     
     private func getPosts() {
