@@ -19,7 +19,7 @@ class AddPostViewController: UIViewController {
     
     // MARK: -IBActions
     @IBAction func addPostAction() {
-        savePost()
+        uploadPhotoToFirebase()
     }
     
     @IBAction func dismissAction() {
@@ -84,7 +84,8 @@ class AddPostViewController: UIViewController {
                     
                     // If no error, get download URL
                     folderReference.downloadURL { (url: URL?, error: Error?) in
-                        print(url?.absoluteString ?? "")
+                        let downloadUrl = url?.absoluteString ?? ""
+                        self.savePost(imageUrl: downloadUrl)
                     }
                 }
             }
@@ -92,13 +93,9 @@ class AddPostViewController: UIViewController {
         
     }
     
-    private func savePost() {
-        // First of all, upload photo to firebase
-        uploadPhotoToFirebase()
-        return
-        
+    private func savePost(imageUrl: String?) {
         // 1. Create request
-        let request = PostRequest(text: postTextView.text, imageUrl: nil, videUrl: nil, location: nil)
+        let request = PostRequest(text: postTextView.text, imageUrl: imageUrl, videUrl: nil, location: nil)
         
         // 2. Loader
         SVProgressHUD.show()
